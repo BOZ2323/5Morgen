@@ -55,7 +55,19 @@
   }
 }
 
+.padding-block-400 {
+  padding-block: var(--size-400)
+}
+.padding-block-700 {
+  padding-block: var(--size-700)
+}
+.padding-block-900 {
+  padding: var(--size-900)
+}
 
+.padding-1100 {
+  padding: var( --size-1100)
+}
 
 /* https://piccalil.li/blog/a-modern-css-reset */
 
@@ -116,9 +128,16 @@ svg {
 
 /* Utility classes */
 
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-primary-400)
+}
+
 .container {
   --max-width: 1110px;
-  --padding: 1rem;
+  --padding: 8rem;
 }
 
 /* header */
@@ -134,8 +153,17 @@ svg {
   padding-top: 3rem;
 }
 
+.primary-heading {
+  padding-top: 3rem;
+}
+
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
   line-height: 1.1;
 }
 
@@ -167,14 +195,41 @@ svg {
   box-shadow: 0 1em 1em -1em var(--clr-accent-500);
 }
 
+/* .button .big {
+  line-height: 2.5;
+  padding: .8rem 2rem;
+} */
+
 .even-columns {
   display: grid;
   gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 }
 
 .all-stations {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+
+.detailpage-header {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 3rem;
+}
+
+.stations {
+  cursor: pointer;
+}
+
+.primary-footer-wrapper  {
+  display: grid;
+  gap: var(--size-600);
+  grid-template-areas: 
+  'form'
+  'nav'
+  'logo-social';
 }
