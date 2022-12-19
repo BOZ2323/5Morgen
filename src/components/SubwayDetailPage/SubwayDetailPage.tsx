@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { lines } from "./lines";
-// import { Line } from "../../types/Line"
-// import {searchSelectedLine} from '../../utils'
 
 export const SubwayDetailPage = () => {
-  // const apiCall = `http://localhost:8080/lines/${name}`;
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const { name } = useParams();
@@ -42,10 +39,17 @@ export const SubwayDetailPage = () => {
 
   const linesToBeAccessed = getAccessToOtherLines();
 
-  if (!linesToBeAccessed) {
+  if (linesToBeAccessed === undefined || linesToBeAccessed === null) {
     return null;
   }
 
+  const currentStationMinus1 = selectedLine.stations[selectedIndex - 1];
+  const currentStationMinus2 = selectedLine.stations[selectedIndex - 2];
+  const currentStationMinus3 = selectedLine.stations[selectedIndex - 3];
+
+  const currentStationPlus1 = selectedLine.stations[selectedIndex + 1];
+  const currentStationPlus2 = selectedLine.stations[selectedIndex + 2];
+  const currentStationPlus3 = selectedLine.stations[selectedIndex + 3];
 
   return (
     <section>
@@ -73,31 +77,30 @@ export const SubwayDetailPage = () => {
             <div className="padding-block-400 padding"></div>
             {linesToBeAccessed.length > 0 && <p>At {selectedStation} you have access to the following lines:</p>}
             <div className="access-lines-box padding-400">
-              {linesToBeAccessed &&
-                linesToBeAccessed.map((line) => (
-                  <li className="button button-access-lines" style={{ backgroundColor: line.color }} key={line.name}>
-                    {line.name}
-                  </li>
-                ))}
+              {linesToBeAccessed.map((line) => (
+                <li className="button button-access-lines" style={{ backgroundColor: line.color }} key={line.name}>
+                  {line.name}
+                </li>
+              ))}
             </div>
             <div className="next-stations-box">
               <div role="contentinfo" className="next-stations-column">
                 {selectedStation !== firstStationOfSelectedLine && (
                   <>
-                    <h1>next stops to {firstStationOfSelectedLine}</h1>
-                    <p>{selectedLine.stations[selectedIndex - 1]}</p>
-                    <p>{selectedLine.stations[selectedIndex - 2]}</p>
-                    <p>{selectedLine.stations[selectedIndex - 3]}</p>
+                    <h4>Next stops to {firstStationOfSelectedLine}:</h4>
+                    {currentStationMinus1 ? <p>{currentStationMinus1}</p> : null}
+                    {currentStationMinus2 ? <p>{currentStationMinus2}</p> : null}
+                    {currentStationMinus3 ? <p>{currentStationMinus3}</p> : null}
                   </>
                 )}
               </div>
               <div role="contentinfo" className="next-stations-column">
                 {selectedStation !== lastStationOfSelectedLine && (
                   <>
-                    <h1>next stops to {lastStationOfSelectedLine}</h1>
-                    <p>{selectedLine.stations[selectedIndex + 1]}</p>
-                    <p>{selectedLine.stations[selectedIndex + 2]}</p>
-                    <p>{selectedLine.stations[selectedIndex + 3]}</p>
+                    <h4>Next stops to {lastStationOfSelectedLine}:</h4>
+                    {currentStationPlus1 ? <p>{currentStationPlus1}</p> : null}
+                    {currentStationPlus2 ? <p>{currentStationPlus2}</p> : null}
+                    {currentStationPlus3 ? <p>{currentStationPlus3}</p> : null}
                   </>
                 )}
               </div>

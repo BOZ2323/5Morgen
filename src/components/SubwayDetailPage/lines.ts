@@ -223,7 +223,6 @@ const lines = [
     "color": "#1C4E87",
     "type": "linear",
     "stations": [
-      "Quermatengraben",
       "Wittenau",
       "Rathaus Reinickendorf",
       "Nordgraben",

@@ -40,7 +40,9 @@ export const AllSubways = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1 className="primary-heading fs-primary-heading">U-Bahn Berlin</h1>
+        <h1 className="primary-heading fs-primary-heading" role="contentinfo">
+          U-Bahn Berlin
+        </h1>
         <Nav lines={lines} />
       </header>
     </div>
