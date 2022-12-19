@@ -1,7 +1,6 @@
 import "./App.css";
 import { AllSubways } from "./components/AllSubways";
 import { SubwayDetailPage } from "./components/SubwayDetailPage";
-// import LinesDummy from "./components/LinesDummy";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -13,7 +12,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<AllSubways />} />
-        {/* <Route exact path="/" element={<AllSubways />} /> */}
         <Route path="/:name" element={<SubwayDetailPage />} />
       </Routes>
     </Router>

@@ -194,7 +194,6 @@ body {
   font-size: var(--fs-button);
   line-height: 1.5;
   color: var(--clr-neutral-100);
-  /* background-color: var(--clr-accent-400); */
   box-shadow: 0 1em 1em -1em var(--clr-accent-500);
 }
 
@@ -203,11 +202,6 @@ body {
 .back-button {
   color: red
 }
-
-/* .button .big {
-  line-height: 2.5;
-  padding: .8rem 2rem;
-} */
 
 .even-columns {
   display: grid;
@@ -223,7 +217,7 @@ body {
 }
 .access-lines-box {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: clamp(var(--size-400), 1vw, var(--size-700));
 }
 
@@ -238,15 +232,6 @@ body {
 .stations {
   cursor: pointer;
 }
-
-/* .primary-footer-wrapper  {
-  display: grid;
-  gap: var(--size-600);
-  grid-template-areas: 
-  'form'
-  'nav'
-  'logo-social';
-} */
 
 .next-stations-box {
   display: flex;
