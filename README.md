@@ -39,8 +39,35 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## My Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here you can add your own notes and comments about the project.
+For example, what trade offs did you have to decide for? What would you have done differently if you had more time?
+What did you think of the tasks? Was it too much / too easy / too ambiguous?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- First of all: this was a fun, great to play aroung with U-Bahn data!
+- because of the limited time I decided to not get into the backend part of this task but fetch the data from a file.
+
+### my decisions
+
+- I use React Router to be able to navigate easily and use the url parameter with useparams.
+- the frontend would be ready to make an api call by using the url parameter.
+- the task ask to render the next stops, but this depends on the direction the user wants to take the train. Here I now just show the next stops into both directions
+- I use prettier for formatting
+- I use React Testing Library / Jest for unit tests
+
+### if I had more time
+
+#### code
+
+- I would do more code-splitting, would have components that contain the logic and smaller 'dumb' components that render. E.g. in the SubwayDetailPage for example a small component to render the accessible lines and another one to render the next stations.
+- I'd add a utils folder for functions that are widely used throughout the code. I would add SubwayDetailsPage/searchSelectedLine() and import it from there.
+- I would let each component have it's own css file for better organisation and readability.
+- I would continue upgrading to React 18 to fix this warning: 
+when the tests run there is a warning, that "ReactDOM.render is no longer supported in React 18. Use createRoot instead." I implemented createRoot as shown in the docs but the warning persists. 
+- and I would add more tests
+
+#### UI / Usability
+
+- I would make the list of stations scrollable.
+- I would let the user click to choose the line direction and then show the 3 next stops in the chosen direction.
