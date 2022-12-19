@@ -45,10 +45,10 @@ Here you can add your own notes and comments about the project.
 For example, what trade offs did you have to decide for? What would you have done differently if you had more time?
 What did you think of the tasks? Was it too much / too easy / too ambiguous?
 
-- First of all: this was a fun, great to play aroung with U-Bahn data!
+- First of all: this was a fun task, great to play around with Berlin U-Bahn data!
 - because of the limited time I decided to not get into the backend part of this task but fetch the data from a file.
 
-### my decisions
+### My decisions
 
 - I use React Router to be able to navigate easily and use the url parameter with useparams.
 - the frontend would be ready to make an api call by using the url parameter.
@@ -56,9 +56,9 @@ What did you think of the tasks? Was it too much / too easy / too ambiguous?
 - I use prettier for formatting
 - I use React Testing Library / Jest for unit tests
 
-### if I had more time
+### If I had more time
 
-#### code
+#### Code
 
 - I would do more code-splitting, would have components that contain the logic and smaller 'dumb' components that render. E.g. in the SubwayDetailPage for example a small component to render the accessible lines and another one to render the next stations.
 - I'd add a utils folder for functions that are widely used throughout the code. I would add SubwayDetailsPage/searchSelectedLine() and import it from there.
